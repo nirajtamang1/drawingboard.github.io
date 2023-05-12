@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgb(93, 155, 241);
+}
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1050px;
+  padding: 10px;
+  gap: 10px;
+}
+section {
+  background-color: white;
+  border-radius: 7px;
+}
+.tools {
+  width: 210px;
+  padding: 12px 22x 0;
+}
+.tools .row {
+  margin-bottom: 20px;
+}
+.row .option {
+  list-style: none;
+}
+.row .options .option {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.option:is(:hover, .active) img {
+  filter: invert(10%) sepia(100%) saturate(3000%) saturate(3000%)
+    hue-rotate(900deg) brightness(100%) contrast(100%);
+}
+.option:is(:hover, .active) :where(span, label) {
+  color: rgb(93, 155, 241);
+}
+.option :where(span, label) {
+  color: rgb(99, 91, 91);
+  padding-left: 5px;
+}
+.option #fill-color {
+  cursor: pointer;
+  height: 14px;
+  width: 14px;
+}
+#fill-color:checked ~ label {
+  color: rgb(93, 155, 241);
+}
+.option #size-slider {
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+}
+.colors .options {
+  display: flex;
+  justify-content: space-between;
+}
+.colors .option {
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+.colors .option:nth-child(1) {
+  background-color: green;
+}
+.colors .option:nth-child(2) {
+  background-color: blue;
+}
+.colors .option:nth-child(3) {
+  background-color: black;
+}
+.colors .option:nth-child(4) {
+  background-color: yellow;
+}
+.colors .option .selected::before {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: inherit;
+  border-radius: inherit;
+  border: 2px solid white;
+  transform: translate(-50%, -50%);
+}
+.colors .option:first-child.selected::before {
+  border-color: white;
+}
+.option #color-picker {
+  opacity: 0;
+  cursor: pointer;
+}
+.buttons button {
+  width: 100%;
+  color: white;
+  border: none;
+  font-size: 0.9rem;
+  outline: none;
+  padding: 12px 0;
+  margin-bottom: 13px;
+  background: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.buttons .clear-canvas {
+  color: rgb(229, 198, 198);
+  border: 1px solid rgb(229, 198, 198);
+  transition: all 0.4s ease;
+}
+.clear-canvas:hover {
+  color: white;
+  background-color: rgb(229, 198, 198);
+}
+.buttons .save-img {
+  background-color: rgb(93, 155, 241);
+  border: 1px solid rgb(93, 155, 241);
+}
+.drawing-board {
+  flex: 1;
+}
+.drawing-board canvas {
+  width: 100%;
+  height: 100%;
+}
